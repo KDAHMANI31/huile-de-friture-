@@ -114,7 +114,7 @@ with tab2:
             color = 'background-color: #ffcccc; color: black' if 'CRITIQUE' in str(val) else 'background-color: #ccffcc; color: black'
             return color
 
-        st.dataframe(df_filtre.style.applymap(colorer_statut, subset=["Statut"]), use_container_width=True)
+       st.dataframe(df_filtre.style.map(colorer_statut, subset=["Statut"]), use_container_width=True)
         
         # Bouton de téléchargement du fichier Excel propre
         with open(FICHIER_SUIVI, "rb") as f:
